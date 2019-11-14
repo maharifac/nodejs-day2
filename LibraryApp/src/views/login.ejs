@@ -11,28 +11,33 @@
 <body>
     <!-- Navigation Bar-->
 
-    <nav class = "navbar navbar-custom col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        </div class = "container-fluid">
-            <ul class = "nav navbar-nav">
-                <li class = "navbar-item ">
-                    <a href = "index.html" class = "item">HOME</a> 
-                    <a href = "signUp.html" class = "item">SignUp</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-        </div>
-    </nav>
+    <nav class="navbar navbar-custom col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    </div class="container-fluid">
+    <ul class="nav ">
+
+        <%for(var i=0;i<nav.length;i++){%>
+            <li class="navbar-item ">
+                <a class="item" href=< %=nav[i].link%>><%=nav[i].title%></a>
+            </li>
+            <%}%>
+    </ul>
+    </div>
+    <div>
+    </div>
+</nav>
      
     <!--Top Part-->
 
-    <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "top">
-        <div class = "col-sm-2 col-md-2 col-lg-6 col-xl-6 float-left" id = "top-heading">
-            <h1 class = "display-3 font-weight-bold">Library</h1>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="top">
+        <div class="col-sm-2 col-md-2 col-lg-6 col-xl-6 float-left" id="top-heading">
+            <h1 class="display-3 font-weight-bold">
+                <%=title%>
+            </h1>
         </div>
-            <div class = "col-sm-2 col-md-4 col-lg-4 col-xl-4 float-right" id = "top-right-box"> 
+        <div class="col-sm-2 col-md-4 col-lg-4 col-xl-4 float-right" id="top-right-box">
         </div>
     </div>
+
 
     <!--Main Content-->
 
@@ -41,8 +46,8 @@
             <div class = "heading-signup">
                 <h1 class = "text-secondary text-center">Login Form</h1>
             </div>
-            <form action = "#" class = "form-group text-secondary col-sm-4 col-md-4 col-lg-8 col-xl-8" id = "form"
-            method = "POST" onsubmit = "return validateLogin(this)">
+            <form action = "/login/save" class = "form-group text-secondary col-sm-4 col-md-4 col-lg-8 col-xl-8" id = "form"
+            method = "POST">
                 <div class = "form-group">
                     <label>User Name*</label>
                     <input type = "text" class = "form-control" name = "uname" id = "uname" placeholder = "Enter Username" required>

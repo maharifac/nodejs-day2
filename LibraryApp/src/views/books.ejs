@@ -16,23 +16,11 @@
         </div class = "container-fluid">
             <ul class = "nav ">
 
-              <%for(var i=0;i<nav.length;i++){%>    
+            <%for(var i=0;i<nav.length;i++){%>    
                 <li class = "navbar-item ">
-
-
-                        <a href="/books/<%=i%>" class="text-muted">Read more</a></small>   //place correct to run the program
-
-
-
-                    <a  class = "item" href = <%=nav[i].link%>><%=nav[i].title%></a> 
-                     </li>
-                    
-
-                
-                <%}%>
-
-
-
+            <a  class = "item" href = <%=nav[i].link%>><%=nav[i].title%></a> 
+                </li>
+            <%}%>
             </ul>
         </div>
         <div>
@@ -55,10 +43,12 @@
         <div class = "container-fluid col-sm-10 col-md-10 col-lg-12 colg-xl-12" id = "content">
 
            <%for(var i=0;i<books.length;i++){%>
+               <img src="/Images/<%=books[i].image%>" style="width:10%; height:10%" > 
                <div class="text-left font-weight-bold">
                    <%=books[i].title%><br>
                    <%=books[i].genre%><br>
                    <%=books[i].author%><br>
+                   <a href="/books/<%=i%>" class="text-muted">Read more</a></small> 
                    <hr>
 
             <%}%>
